@@ -1,38 +1,230 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #232f3e;
+  color: #fff;
   text-align: center;
+  padding: 10px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  background-color: #232f3e;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover {
+  background-color: #3b4a61;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+
+.lista-comics-container {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+.go-to-favorites-button {
+  background-color: #3b4a61;
   color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.go-to-favorites-button:hover {
+  background-color: #232f3e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.comics-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.comic-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.comic-card:hover {
+  transform: translateY(-10px);
+}
+
+.comic-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.comic-actions button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.comic-details-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comic-details-container img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.comic-details-container h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.comic-details-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.character-card {
+  text-align: center;
+  margin: 10px;
+}
+
+.character-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.character-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+
+.navigation-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-buttons button {
+  width: 48%;
+  padding: 10px;
+  background-color: #232f3e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navigation-buttons button:hover {
+  background-color: #3b4a61;
+}
+
+
+.favoritos-container {
+  padding: 20px;
+}
+
+.favoritos-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.favoritos-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favoritos-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .comics-lista {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .comic-card {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .favoritos-list {
+    flex-direction: column;
+  }
+
+  .favoritos-card {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .go-to-favorites-button {
+    width: 90%;
+    margin: 10px 0;
   }
 }
